@@ -1,0 +1,84 @@
+---
+title: "Final Project: Netflix Movies and TV Shows"
+author: "Rou Zhen Chen"
+date: "`r Sys.Date()`"
+output: 
+  pdf_document:
+    number_sections: true
+    toc: true
+    toc_depth: 2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library(knitr)
+library(here)
+```
+
+# Introduction
+For this report, I will analyze the Netflix Movies and TV Shows dataset (Kaggle, 1925–2021), which contains 8,807 records with variables such as title, type,country, release_year, rating. To ensure accurate and interpretable results, I will exclude observations with missing (NA) values that are relevant to each analysis.
+
+This datasheet provides rich information about the characteristics of Netflix’s streaming catalog, enabling the exploration of trends over time and across countries. Importantly, the analyses will distinguish between Movies and TV Shows to show differences in how these two content types have developed on the platform.
+
+In this report, I will perform descriptive analyses and create visualizations to explore:
+
+-Number of Movies vs TV Shows 
+
+-Top 10 Countries by Number of Movies or TV Shows
+
+-Growth of Netflix Movies and TV Shows Over Time
+
+-Distribution of Netflix Titles by Rating and Content Type
+
+
+# Check the location of data
+```{r, location-check,echo=TRUE}
+here::here ("finalproject_RZCHEN_1027.Rmd")
+```
+# Tables
+
+## Table 1. Number of Movies vs TV Shows 
+**Description**:  
+This table shows the distribution of content types in Netflix’s catalog. It helps us observe whether Movies or TV Shows are more common overall.
+```{r table1, echo=FALSE}
+table_type <- readRDS(here::here("output", "table_type.rds"))
+
+knitr::kable(table_type, caption = "Number of Movies vs TV Shows (excluding missing values)")
+```
+## Table 2.Top 10 Countries by Number of Movies (excluding missing values)
+**Description**: 
+This table lists the top 10 countries producing the most Movies on Netflix. It highlights regional trends in film production.
+```{r table2, echo=FALSE}
+# Top 10 for Movies
+top_movies <- readRDS(here::here("output","top_movies.rds"))
+
+
+kable(top_movies, caption = "Top 10 Countries by Number of Movies")
+
+```
+## Table 3.Top 10 Countries by Number of TV Shows (excluding missing values)
+**Description**: 
+This table shows the top 10 countries with the most TV Shows available on Netflix, helping us see which regions dominate in episodic content.
+```{r table3, echo=FALSE}
+# Top 10 for TV Shows
+
+top_tv <- readRDS(here::here("output", "top_tv.rds"))
+
+kable(top_tv, caption = "Top 10 Countries by Number of TV Shows")
+```
+# Figure
+
+## Figure 1. Growth of Netflix Movies and TV Shows Over Time (Excluding Missing Values)
+**Description**: This line plot shows how the number of Movies added to Netflix has changed over the years, based on their release year. Missing values for release_year or type were excluded from the analysis to ensure accuracy. The figure shows trends in movie production and availability across time.
+```{r figure1, echo=FALSE}
+figure1 <- readRDS(here::here ("output","figure1.rds"))
+figure1
+```
+
+## Figure 2. Distribution of Netflix Titles by Rating and Content Type (Excluding Missing Values)
+**Description**: 
+This bar chart displays the distribution of Netflix titles across different rating categories, separated by Movies and TV Shows. Ratings such as G, PG, R, and television-specific classifications like TV-MA or TV-14 are included. Missing values for rating or type were excluded from the analysis to ensure accuracy.
+```{r figure2, echo=FALSE}
+figure2 <- readRDS(here::here ("output","figure2.rds"))
+figure2 
+```
