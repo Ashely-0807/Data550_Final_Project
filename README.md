@@ -21,6 +21,10 @@ The final report presents **three tables** and **two figures** summarizing key i
 - **Figure 2:** Distribution of Netflix Titles by Rating and Content Type  
 
 ---
+##Synchronize your package repository (This `runs:renv::restore()`)
+  - Clone the repository
+  - Install all required R packages with: `make install` in `Git bash`
+  -If you add or update packages, run: `renv::snapshot()`
 ## How to generate the final report?
 
   - run `make .rds_outputs` in `Git bash` for generating tables and figures from `Makefile `

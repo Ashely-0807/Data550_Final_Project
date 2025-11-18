@@ -37,3 +37,9 @@ $(RDS_FILES): $(R_SCRIPT) $(DATA_FILE)
 clean:
 	@echo "Removing generated .rds files..."
 	-rm -f output/*.rds && rm -f finalproject_RZCHEN_1027.pdf
+	
+#Make Install Rule
+.PHONY: install
+
+install:
+	Rscript -e "renv::restore()"
