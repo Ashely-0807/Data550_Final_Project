@@ -25,6 +25,7 @@ The final report presents **three tables** and **two figures** summarizing key i
   - Clone the repository
   - Install all required R packages with: `make install` in `Git bash`
   -If you add or update packages, run: `renv::snapshot()`
+---
 ## How to generate the final report?
 
   - run `make .rds_outputs` in `Git bash` for generating tables and figures from `Makefile `
