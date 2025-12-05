@@ -1,7 +1,7 @@
 # Final Project: Netflix Movies and TV Shows
 
 **Author:** Rou Zhen Chen  
-**Date:** October 27, 2025
+**Date:** December 4, 2025
 
 ---
 
@@ -19,6 +19,14 @@ The final report presents **three tables** and **two figures** summarizing key i
 **Figures**
 - **Figure 1:** Growth of Netflix Movies and TV Shows Over Time  
 - **Figure 2:** Distribution of Netflix Titles by Rating and Content Type  
+---
+## Building the Docker Image
+
+To build the Docker image, run the following command from the project root directory (where the Dockerfile is located):
+  - In bash run `docker build -t ashley0807/final_project2 .`
+
+## Build the report by running a docker from `Makefile` 
+  - In bash run `make docker_report'`
 
 ---
 ## Synchronize your package repository (This runs: `renv::restore()`)
