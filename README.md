@@ -26,7 +26,8 @@ To build the Docker image, run the following command from the project root direc
   - In bash run `docker build -t ashley0807/final_project2 .`
 
 ## Build the report by running a docker from `Makefile` 
-  - In bash run `make docker_report'`
+  - The report can be built by running the `make docker_report`.
+  - Output the final pdf report to report/finalproject_RZCHEN_1027.pdf
 
 ---
 ## Synchronize your package repository (This runs: `renv::restore()`)
