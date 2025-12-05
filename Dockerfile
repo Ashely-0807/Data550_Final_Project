@@ -37,6 +37,7 @@ RUN mkdir -p code output data report
 
 #Add Latex
 RUN R -e "install.packages('tinytex'); tinytex::install_tinytex()"
+ENV PATH="${PATH}:/root/bin"
 
 # Copy raw data
 COPY data/netflix_titles.csv data/netflix_titles.csv
